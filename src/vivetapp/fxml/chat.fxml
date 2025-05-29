@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="vivetapp.controller.ChatController"
+      spacing="10" alignment="CENTER" prefWidth="600" prefHeight="400">
+
+    <Label fx:id="welcomeLabel" text="Добро пожаловать" style="-fx-font-size: 16;" />
+
+    <TextArea fx:id="chatArea" editable="false" wrapText="true" prefHeight="250" prefWidth="550" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="recipientIdField" promptText="ID получателя" prefWidth="120"/>
+        <TextField fx:id="messageField" promptText="Сообщение" prefWidth="300"/>
+        <Button text="Отправить" onAction="#sendMessage" prefWidth="100"/>
+    </HBox>
+
+</VBox>
