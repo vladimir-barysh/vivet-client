@@ -1,46 +1,33 @@
-package vivetapp.services;
+package vivetapp.service;
 
 import vivetapp.model.Message;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-import java.net.URI;
-import java.util.function.Consumer;
+public class ChatService {
 
-public class ChatService extends WebSocketClient {
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private Consumer<Message> onMessageCallback;
-
-    public ChatService(URI serverUri) {
-        super(serverUri);
-    }
-
-    public void setOnMessageReceived(Consumer<Message> callback) {
-        this.onMessageCallback = callback;
-    }
-
-    @Override
-    public void onOpen(ServerHandshake handshake) {
-        System.out.println("✅ Connected to WebSocket");
-    }
-
-    @Override
-    public void onMessage(String messageJson) {
+    public boolean sendMessage(String token, Message message) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
-            Message msg = mapper.readValue(messageJson, Message.class);
-            if (onMessageCallback != null) {
-                onMessageCallback.accept(msg);
+            URL url = new URL("http://45.153.69.122:8080/api/chat/send");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Authorization", "Bearer " + token);
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String json = objectMapper.writeValueAsString(message);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(json.getBytes());
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void sendMessage(Message msg) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            send(mapper.writeValueAsString(msg));
+            return conn.getResponseCode() == 200;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 }

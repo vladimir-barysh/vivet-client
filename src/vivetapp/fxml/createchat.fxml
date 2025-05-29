@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="vivetapp.controller.CreateChatController"
-      spacing="10" alignment="CENTER" prefWidth="400" prefHeight="450">
-
-    <Label text="Создание нового группового чата" style="-fx-font-size: 16;" />
-    <TextField fx:id="groupNameField" promptText="Имя чата (можно оставить пустым)" />
-    <Label text="Выберите участников:" />
-    <ListView fx:id="userListView" prefHeight="250" prefWidth="300" />
-    <Button text="Создать группу" onAction="#onCreateGroup" />
-    <Label fx:id="statusLabel" textFill="red" />
-
-</VBox>
+<AnchorPane prefHeight="450" prefWidth="400" stylesheets="/vivetapp/css/createchat.css"
+            xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="vivetapp.controller.CreateChatController">
+    <Label layoutX="46.0" layoutY="20.0" style="-fx-font-size: 20;" text="Создание нового группового чата" />
+    <Label layoutX="25.0" layoutY="73.0" prefHeight="17.0" prefWidth="314.0"
+           text="Введите название чата (можно оставить пустым):" />
+    <TextField fx:id="groupNameField" focusTraversable="false" layoutX="25.0" layoutY="96.0" prefHeight="31.0"
+               prefWidth="351.0" promptText="Название чата" />
+    <Label layoutX="25.0" layoutY="140.0" text="Выберите участников:" />
+    <ListView fx:id="userListView" layoutX="25.0" layoutY="164.0" prefHeight="189.0" prefWidth="351.0" />
+    <Button layoutX="140.0" layoutY="370.0" onAction="#onCreateGroup" text="Создать группу" />
+    <Label fx:id="statusLabel" layoutX="3.0" layoutY="413.0" prefHeight="17.0" prefWidth="400.0" alignment="CENTER"/>
+</AnchorPane>

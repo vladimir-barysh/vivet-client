@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="377.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/21.0.7"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="vivetapp.controller.RegisterController"
+            stylesheets="/vivetapp/css/register.css">
+    <Label layoutX="193.0" layoutY="35.0" style="-fx-font-size: 30px;" text="Регистрация" />
+    <TextField fx:id="usernameField" focusTraversable="false" layoutX="185.0" layoutY="103.0" promptText="Никнейм" />
+    <TextField fx:id="emailField" focusTraversable="false" layoutX="185.0" layoutY="142.0" promptText="Почта" />
+    <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="185.0" layoutY="200.0" promptText="Пароль" />
+    <PasswordField fx:id="confirmPasswordField" focusTraversable="false" layoutX="185.0" layoutY="237.0"
+                   promptText="Повторите пароль" />
+    <Label fx:id="errorLabel" layoutY="349.0" prefHeight="17.0" prefWidth="557.0" alignment="CENTER"/>
+    <Button layoutX="199.0" layoutY="286.0" onAction="#onRegister" text="Зарегистрироваться" />
+    <Button fx:id="backButton" layoutX="483.0" layoutY="317.0" onAction="#onBack" text="Назад" />
 </AnchorPane>

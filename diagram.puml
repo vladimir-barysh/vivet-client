@@ -1,11 +1,91 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+skinparam classAttributeIconSize 0
+hide circle
 
-autonumber
+package controller {
+    class LoginController {
+        +openApp()
+    }
+    class RegisterController {
+        +loadLoginScene()
+        +openApp()
+    }
+    class CreateChatController {
+        +generateNameFromSelection()
+    }
+    class MainChatController {
+        +setupContextMenu()
+        +startMessageRefresherTimer()
+        +stopMessageRefresherTimer()
+        +loadChats()
+        +startRefreshTimer()
+        +stopRefresh()
+        +deleteChat()
+        +openChat()
+        +loadChat()
+        +displayMessage()
+        +getUsernameCached()
+    }
+}
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+package model {
+    class User {
+        - Long id
+        - String username
+    }
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+    class Message {
+        - Long id
+        - Long senderId
+        - Long chatId
+        - String content
+        - Date timestamp
+    }
+
+    class ChatGroup {
+        - Long groupId
+        - String groupName
+        - List<Long> memberIds
+    }
+
+    class Chat {
+        - Long chatId
+        - Long groupId
+    }
+}
+
+package service {
+    class UserService {
+        +getAllUsers()
+        +getCurrentUser()
+    }
+    class GroupService {
+        +createGroup()
+        +getUserGroups()
+    }
+    class ChatService {
+        +sendMessage()
+    }
+}
+
+package request {
+    class CreateGroupRequest {
+        - String groupName
+        - List<Long> userIds
+    }
+}
+
+LoginController --> UserService
+RegisterController --> UserService
+CreateChatController --> GroupService
+GroupService --> CreateGroupRequest
+MainChatController --> ChatService
+MainChatController --> GroupService
+MainChatController --> UserService
+
+MainChatController --> Message
+MainChatController --> ChatGroup
+MainChatController --> User
+MainChatController --> Chat
+
 @enduml

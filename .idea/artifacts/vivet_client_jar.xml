@@ -3,9 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/vivet_client_jar</output-path>
     <root id="archive" name="vivet-client.jar">
       <element id="module-output" name="vivet-client" />
-      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/slf4j-api-1.7.36.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/Java-WebSocket-1.5.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/slf4j-nop-1.7.36.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx-swt.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.web.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.base.jar" path-in-jar="/" />
@@ -14,9 +12,17 @@
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.swing.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.controls.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/slf4j-nop-1.7.36.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/jackson-core-2.17.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/jackson-databind-2.17.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/slf4j-api-1.7.36.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/jackson-annotations-2.17.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/Java-WebSocket-1.5.3.jar" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-annotations-2.17.1.jar" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-core-2.17.1.jar" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-databind-2.17.1.jar" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/slf4j-api-1.7.36.jar" />
+      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/slf4j-nop-1.7.36.jar" />
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx-swt.jar" />
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.web.jar" />
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.base.jar" />
@@ -25,12 +31,6 @@
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.swing.jar" />
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.controls.jar" />
       <element id="file-copy" path="$USER_HOME$/.jdks/javafx-sdk-21.0.7/lib/javafx.graphics.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/Java-WebSocket-1.5.3.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-annotations-2.17.1.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-core-2.17.1.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/jackson-databind-2.17.1.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/slf4j-api-1.7.36.jar" />
-      <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/slf4j-nop-1.7.36.jar" />
     </root>
   </artifact>
 </component>

@@ -1,0 +1,33 @@
+.root {
+    -fx-background-color: #F4d4ff;
+}
+
+.button {
+    -fx-background-color: #BA55D3;
+    -fx-text-fill: #3F0D51;
+    -fx-font-size: 15;
+}
+
+.button:hover {
+    -fx-background-color: #CE79D9;
+}
+
+.button:pressed {
+    -fx-background-color: #8438A3;
+}
+
+.label {
+    -fx-text-fill: #3F0D51;
+}
+
+.text-field {
+    -fx-background-color: #EEE5F3;
+    -fx-text-fill: #3F0D51;
+    -fx-font-size: 15;
+}
+
+.password-field {
+    -fx-background-color: #EEE5F3;
+    -fx-text-fill: #3F0D51;
+    -fx-font-size: 15;
+}
